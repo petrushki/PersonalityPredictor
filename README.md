@@ -1,20 +1,20 @@
 # PersonalityPredictor
 
-## 🧠 Project Overview
+## Project Overview
 
 **PersonalityPredictor** is a machine learning project that classifies whether a person is more **introverted (1)** or **extroverted (0)** based on seven behavioral features.
 The goal is to build and evaluate several binary classifiers, compare their performance using AUROC, and deploy the final model as an API.
 
 Personality prediction can support:
 
-* 📊 **Audience segmentation & marketing**
-* 🧬 **Behavioral modeling**
-* 🧠 **Psychology and social behavior research**
-* 🧪 **Synthetic data experimentation**
+* **Audience segmentation & marketing**
+* **Behavioral modeling**
+* **Psychology and social behavior research**
+* **Synthetic data experimentation**
 
 ---
 
-## 📘 Problem Description
+## Problem Description
 
 Given a set of behavioral attributes, the task is to predict a binary personality label:
 
@@ -42,9 +42,9 @@ Given a set of behavioral attributes, the task is to predict a binary personalit
 
 ---
 
-## 📊 Dataset
+## Dataset
 
-The dataset comes from **Syncora.ai** and contains **10,000 synthetic samples**, mimicking realistic social-behavior patterns without any privacy risk.
+The dataset comes from **Syncora.ai** and contains **5,000 synthetic samples**, mimicking realistic social-behavior patterns without any privacy risk.
 
 **Download link:**
 [https://huggingface.co/datasets/syncora/introvert_extrovert_personality_dataset](https://huggingface.co/datasets/syncora/introvert_extrovert_personality_dataset)
@@ -64,9 +64,9 @@ data/Personality_Syncora_Synthetic.csv
 
 ---
 
-## 🔍 Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 
-EDA is fully documented in **notebook.ipynb** and includes:
+EDA is fully performed in **notebook.ipynb** and includes:
 
 * Feature distributions
 * Missing values analysis
@@ -78,7 +78,7 @@ EDA is fully documented in **notebook.ipynb** and includes:
 
 ---
 
-## 🤖 Model Development
+## Model Development
 
 The following models were trained and compared (5-fold cross-validation, AUROC metric):
 
@@ -98,7 +98,7 @@ model.bin
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── data/
@@ -119,13 +119,13 @@ model.bin
 ---
 
 
-# ▶️ How to Run the Project
+# How to Run the Project
 
 This project can be run **via Docker** (recommended) or **locally with uv**.
 
 ---
 
-# 📦 Docker Usage (Recommended)
+## Docker Usage (Recommended)
 
 ### **1. Build the Docker image**
 
@@ -175,7 +175,7 @@ curl -X POST http://127.0.0.1:9696/predict \
 
 ---
 
-# ▶️ Running Locally (Without Docker)
+## Running Locally (Without Docker)
 
 ### **1. Clone the repository**
 
