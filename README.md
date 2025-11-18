@@ -215,3 +215,91 @@ http://127.0.0.1:9696
 ```
 
 
+---
+
+## Cloud Deployment (Render)
+
+This project is deployed as a public web service on **Render** using the provided Dockerfile. The service exposes the `/predict` endpoint for personality prediction.
+
+---
+
+###  Accessing the API
+
+The public URL of the deployed service is:
+
+```
+https://personalitypredictor.onrender.com
+```
+
+You can open:
+
+```
+https://personalitypredictor.onrender.com/docs
+```
+
+This opens the **Swagger UI**, where you can interactively test the `/predict` endpoint.
+
+---
+
+###  Testing a Sample Request
+
+#### **Using `curl`**
+
+```bash
+curl -X POST https://personalitypredictor.onrender.com/predict \
+    -H "Content-Type: application/json" \
+    -d '{
+        "time_spent_alone": 4,
+        "stage_fear": 1,
+        "social_event_attendance": 4,
+        "going_outside": 6,
+        "drained_after_socializing": 1,
+        "friends_circle_size": 4,
+        "post_frequency": 0
+    }'
+```
+
+#### **Using Python**
+
+```python
+import requests
+
+url = "https://personalitypredictor.onrender.com/predict"
+payload = {
+    "time_spent_alone": 4,
+    "stage_fear": 1,
+    "social_event_attendance": 4,
+    "going_outside": 6,
+    "drained_after_socializing": 1,
+    "friends_circle_size": 4,
+    "post_frequency": 0
+}
+
+response = requests.post(url, json=payload)
+print(response.json())
+```
+
+Example response:
+
+```json
+{
+  "probability": 0.76,
+  "introvert": true,
+  "extrovert": false
+}
+```
+
+---
+
+### Screenshots
+
+
+**Render Dashboard**
+
+![Render Dashboard](screenshots/render_dashboard.png)
+**API Test**
+
+![API Test](screenshots/api_test.png)
+
+
+---
